@@ -1,0 +1,222 @@
+classes:
+- system.linux.system.repo_local.mcp.apt_mirantis.maas
+- system.maas.region.single
+- system.backupninja.client.single
+- cluster.tty.infra
+parameters:
+  _param:
+    backupninja_backup_host: ${_param:infra_kvm_node01_address}
+    backupninja_engine: rsync
+
+  maas:
+    region:
+      commissioning_scripts:
+        00-maas-05-simplify-network-interfaces: /etc/maas/files/commisioning_scripts/00-maas-05-simplify-network-interfaces
+      bind:
+        host: ${_param:deploy_address}
+      maas_config:
+        main_archive: http://${_param:local_repo_url}/ubuntu
+    cluster:
+      region:
+        host: ${_param:deploy_address}
+      saltstack_repo_key: ${_param:aptly_gpg_public_key}
+      saltstack_repo_trusty: "http://${_param:local_repo_url}/ubuntu-trusty ${_param:apt_mk_version} salt"
+      saltstack_repo_xenial: "http://${_param:local_repo_url}/ubuntu-xenial ${_param:apt_mk_version} salt"
+# linux:
+#   network:
+#     interface:
+#       primary_interface:
+#         enabled: true
+#         name: ens2
+#         type: eth
+#         proto: static
+#         netmask: ${_param:deploy_network_netmask}
+#         address: ${_param:single_address}
+#         gateway: ${_param:deploy_network_gateway}
+#         name_servers:
+#         - ${_param:dns_server01}
+#         - ${_param:dns_server02}
+### Sample MaaS Configuration
+#  maas:
+#    region:
+#      subnets:
+#        deploy_network:
+#          cidr: 172.17.44.0/24
+#          fabric: deploy_network
+#          gateway_ip: 172.17.44.1
+#          iprange:
+#            end: 172.17.44.200
+#            start: 172.17.44.92
+#      fabrics:
+#        deploy_network:
+#          description: Fabric for deploy_network
+#      machines:
+#        kvm01:
+#          interface:
+#            mac: 00:25:90:e7:46:d0
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:infra_kvm_node01_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 176.74.220.208
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        kvm02:
+#          interface:
+#            mac: 00:25:90:e7:4b:52
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:infra_kvm_node02_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 176.74.220.214
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        kvm03:
+#          interface:
+#            mac: 00:25:90:e7:48:c6
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:infra_kvm_node03_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 176.74.220.216
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        gtw01:
+#          interface:
+#            mac: 00:25:90:e7:46:d0
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_gateway_node01_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 176.74.220.208
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        gtw02:
+#          interface:
+#            mac: 00:25:90:e7:4b:52
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_gateway_node02_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 176.74.220.214
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        gtw03:
+#          interface:
+#            mac: 00:25:90:e7:48:c6
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_gateway_node03_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 176.74.220.216
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        cmp001:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_compute_node001_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        cmp002:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_compute_node002_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        cmp003:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_compute_node003_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        cmp004:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_compute_node004_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        cmp005:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_compute_node005_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        osd001:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:ceph_osd_node001_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        osd002:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:ceph_osd_node002_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+#        osd003:
+#          interface:
+#            mac: 00:25:90:eb:92:4a
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:ceph_osd_node003_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            power_address: 185.8.58.225
+#            power_password: vsHmCLc4z0aY
+#            power_type: ipmi
+#            power_user: engineer
+
