@@ -33,7 +33,7 @@ classes:
 parameters:
   _param:
     salt_master_base_environment: prd
-    reclass_data_repository: "https://github.com/Mirantis/Inspur-reclass-model"
+    reclass_data_repository: "https://github.com/keefans/model"
     reclass_data_revision: master
     reclass_config_master: ${_param:infra_config_deploy_address}
     single_address: ${_param:infra_config_address}
@@ -41,7 +41,6 @@ parameters:
     linux_system_codename: xenial
     salt_api_password_hash: "$6$NyWQYHbw$UwiyodGBEtFzvEM/whqs7ZLygznoqdmMTfbo1ghnbuF1Gb2AQAz4AGh2N5QugCGNn0xeOTf.bA00wOuqVbMkU0"
     salt_master_host: ${_param:infra_config_deploy_address}
-    backupninja_backup_host: ${_param:infra_kvm_node03_address}
   linux:
     network:
       interface:
@@ -68,3 +67,7 @@ parameters:
       backup: true
     minion:
       backup: true
+  reclass:
+    storage:
+      data_source:
+        engine: local
