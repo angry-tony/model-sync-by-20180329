@@ -1,8 +1,0 @@
-classes:
-  - system.jenkins.slave
-parameters:
-  linux:
-    system:
-      package:
-        debmirror:
-          version: latest

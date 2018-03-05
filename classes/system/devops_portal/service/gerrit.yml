@@ -1,9 +1,0 @@
-parameters:
-  devops_portal:
-    config:
-      service:
-        gerrit:
-          endpoint:
-            address: ${_param:haproxy_gerrit_bind_host}
-            port: ${_param:haproxy_gerrit_bind_port}
-            https: ${_param:haproxy_gerrit_ssl:enabled}

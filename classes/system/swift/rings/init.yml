@@ -1,5 +1,0 @@
-parameters:
-  swift:
-    ring_builder:
-      enabled: true
-      rings: []

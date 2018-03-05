@@ -1,3 +1,0 @@
-classes:
-- service.prometheus.server.container
-- system.prometheus.server

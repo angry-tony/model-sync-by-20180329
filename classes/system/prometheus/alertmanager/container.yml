@@ -1,3 +1,0 @@
-classes:
-- service.prometheus.alertmanager.container
-- system.prometheus.alertmanager

@@ -1,8 +1,0 @@
-classes:
-- service.octavia.api.single
-parameters:
-  octavia:
-    api:
-      enabled: true
-      bind:
-        address: ${_param:single_address}

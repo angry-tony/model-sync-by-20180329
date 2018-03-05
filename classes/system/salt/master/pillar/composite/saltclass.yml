@@ -1,2 +1,0 @@
-classes:
-- service.salt.master.pillar.composite.saltclass

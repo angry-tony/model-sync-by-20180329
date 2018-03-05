@@ -1,9 +1,0 @@
-classes:
-- service.libvirt.server
-parameters:
-  linux:
-    system:
-      group:
-        libvirtd:
-          enabled: true
-          name: libvirtd

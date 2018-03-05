@@ -1,5 +1,0 @@
-parameters:
-  sensu:
-    client:
-      unsubscribe:
-        - collectd.client

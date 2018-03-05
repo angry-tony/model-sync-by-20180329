@@ -1,9 +1,0 @@
-parameters:
-  openldap:
-    client:
-      entry:
-        groups:
-          type: ou
-          classes:
-            - top
-            - organizationalUnit

@@ -1,6 +1,0 @@
-parameters:
-  grafana:
-    server:
-      plugins:
-        grafana-piechart-panel:
-          enabled: true

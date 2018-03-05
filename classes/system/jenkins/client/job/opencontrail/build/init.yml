@@ -1,4 +1,0 @@
-classes:
-  - system.jenkins.client.job.opencontrail.build.generic
-  - system.jenkins.client.job.opencontrail.build.test
-  - system.jenkins.client.job.opencontrail.build.dpdk-extra

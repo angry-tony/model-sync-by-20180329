@@ -1,6 +1,0 @@
-classes:
-- service.model_manager.server.integration
-- service.redis.server.local
-- system.nginx.server.single
-- system.nginx.server.site.model_manager
-

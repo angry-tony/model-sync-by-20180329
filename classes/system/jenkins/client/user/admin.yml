@@ -1,7 +1,0 @@
-parameters:
-  jenkins:
-    client:
-      user:
-        admin:
-          password: ${_param:jenkins_admin_password}
-          admin: true

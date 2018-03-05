@@ -1,3 +1,0 @@
-classes:
-- service.ceph.backup.client
-- system.openssh.client.root

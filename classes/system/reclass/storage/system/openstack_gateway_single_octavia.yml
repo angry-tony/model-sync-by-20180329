@@ -1,7 +1,0 @@
-parameters:
-  reclass:
-    storage:
-      node:
-        openstack_gateway_node01:
-          classes:
-          - cluster.${_param:cluster_name}.openstack.octavia_manager

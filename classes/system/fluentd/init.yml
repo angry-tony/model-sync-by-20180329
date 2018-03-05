@@ -1,6 +1,0 @@
-classes:
-- service.fluentd.agent.single
-- system
-parameters:
-  fluentd:
-    dollar: ${_param:dollarsign}

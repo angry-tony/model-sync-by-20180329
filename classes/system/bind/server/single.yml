@@ -1,9 +1,0 @@
-classes:
-  - service.bind.server.single
-parameters:
-  bind:
-    server:
-      enabled: true
-      recursion:
-        hosts:
-          - localhost

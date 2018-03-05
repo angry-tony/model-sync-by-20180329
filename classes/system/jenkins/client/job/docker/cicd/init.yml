@@ -1,3 +1,0 @@
-classes:
-  - system.jenkins.client.job.docker.cicd.rally
-  - system.jenkins.client.job.docker.cicd.tempest

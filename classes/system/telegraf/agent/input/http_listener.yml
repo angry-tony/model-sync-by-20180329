@@ -1,2 +1,0 @@
-classes:
-- service.telegraf.agent.input.http_listener

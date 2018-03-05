@@ -1,9 +1,0 @@
-parameters:
-  docker:
-    client:
-      stack:
-        monitoring:
-          service:
-            remote_agent:
-              volumes:
-                - ${ceph:common:prefix_dir}/etc/ceph:/etc/ceph
