@@ -42,11 +42,14 @@ parameters:
     maas_admin_password: r00tme
     maas_db_password: fRqC7NJrBR0x
     infra_kvm_address: 10.0.0.196
-    infra_kvm_node01_address: 10.0.0.196
-    infra_kvm_node01_deploy_address: 192.168.1.196
+    infra_kvm_node01_address: 10.0.0.1
+    infra_kvm_node01_deploy_address: 192.168.1.195
     infra_kvm_node01_hostname: kvm01
-
-    glusterfs_node01_address: ${_param:infra_kvm_node01_address}
+    infra_kvm_node02_address: 10.0.0.196
+    infra_kvm_node02_deploy_address: 192.168.1.196
+    infra_kvm_node02_hostname: kvm02
+    
+    glusterfs_node01_address: ${_param:infra_kvm_node02_address}
     linux_deploy_interface:
       enabled: true
       type: eth
