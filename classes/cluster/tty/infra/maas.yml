@@ -5,7 +5,7 @@ classes:
 - cluster.tty.infra
 parameters:
   _param:
-    backupninja_backup_host: ${_param:infra_kvm_node01_address}
+    backupninja_backup_host: ${_param:infra_kvm_node02_address}
     backupninja_engine: rsync
 
   maas:
@@ -37,20 +37,20 @@ parameters:
 #         - ${_param:dns_server01}
 #         - ${_param:dns_server02}
 ### Sample MaaS Configuration
-#  maas:
-#    region:
-#      subnets:
-#        deploy_network:
-#          cidr: 172.17.44.0/24
-#          fabric: deploy_network
-#          gateway_ip: 172.17.44.1
-#          iprange:
-#            end: 172.17.44.200
-#            start: 172.17.44.92
-#      fabrics:
-#        deploy_network:
-#          description: Fabric for deploy_network
-#      machines:
+  maas:
+    region:
+      subnets:
+        deploy_network:
+          cidr: 192.168.1.0/24
+          fabric: deploy_network
+          gateway_ip: 192.168.1.1
+          iprange:
+            end: 192.168.1.220
+            start: 192.168.1.205
+      fabrics:
+        deploy_network:
+          description: Fabric for deploy_network
+      machines:
 #        kvm01:
 #          interface:
 #            mac: 00:25:90:e7:46:d0
@@ -58,23 +58,27 @@ parameters:
 #            mode: static
 #            ip: ${_param:infra_kvm_node01_deploy_address}
 #            gateway: ${_param:deploy_network_gateway}
-#          power_parameters:
-#            power_address: 176.74.220.208
-#            power_password: vsHmCLc4z0aY
-#            power_type: ipmi
-#            power_user: engineer
-#        kvm02:
-#          interface:
-#            mac: 00:25:90:e7:4b:52
-#            subnet: deploy_network
-#            mode: static
-#            ip: ${_param:infra_kvm_node02_deploy_address}
-#            gateway: ${_param:deploy_network_gateway}
-#          power_parameters:
-#            power_address: 176.74.220.214
-#            power_password: vsHmCLc4z0aY
-#            power_type: ipmi
-#            power_user: engineer
+        kvm02:
+          interface:
+            mac: 00:50:56:ad:30:67
+            subnet: deploy_network
+            mode: static
+            ip: ${_param:infra_kvm_node02_deploy_address}
+            gateway: ${_param:deploy_network_gateway}
+        cmp001:
+          interface:
+            mac: 00:50:56:ad:b6:bf
+            subnet: deploy_network
+            mode: static
+            ip: ${_param:openstack_compute_node001_deploy_address}
+            gateway: ${_param:deploy_network_gateway}
+        osd001:
+          interface:
+            mac: 00:50:56:ad:b6:bf
+            subnet: deploy_network
+            mode: static
+            ip: ${_param:ceph_osd_node001_deploy_address}
+            gateway: ${_param:deploy_network_gateway}
 #        kvm03:
 #          interface:
 #            mac: 00:25:90:e7:48:c6
