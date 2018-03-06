@@ -97,6 +97,11 @@ parameters:
           names:
           - ${_param:infra_kvm_node01_hostname}
           - ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
+        kvm01:
+          address: ${_param:infra_kvm_node02_address}
+          names:
+          - ${_param:infra_kvm_node02_hostname}
+          - ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
 
     system:
       apt:
