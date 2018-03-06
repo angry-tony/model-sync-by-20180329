@@ -46,11 +46,19 @@ parameters:
             gateway: ${_param:deploy_network_gateway}
         kvm02:
           interface:
-            mac: 00:50:56:ad:30:67
+            mac: 00:50:56:ad:aa:01
             subnet: deploy_network
             mode: static
             ip: ${_param:infra_kvm_node02_deploy_address}
             gateway: ${_param:deploy_network_gateway}
+        kvm03:
+          interface:
+            mac: 00:50:56:ad:30:67
+            subnet: deploy_network
+            mode: static
+            ip: ${_param:infra_kvm_node03_deploy_address}
+            gateway: ${_param:deploy_network_gateway}
+            
 #        cmp001:
 #          interface:
 #            mac: 00:50:56:ad:b6:bf
