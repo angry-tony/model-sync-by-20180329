@@ -51,17 +51,17 @@ parameters:
             mode: static
             ip: ${_param:infra_kvm_node02_deploy_address}
             gateway: ${_param:deploy_network_gateway}
-        cmp001:
-          interface:
-            mac: 00:50:56:ad:b6:bf
-            subnet: deploy_network
-            mode: static
-            ip: ${_param:openstack_compute_node001_deploy_address}
-            gateway: ${_param:deploy_network_gateway}
-        osd001:
-          interface:
-            mac: 00:50:56:ad:b6:bf
-            subnet: deploy_network
-            mode: static
-            ip: ${_param:ceph_osd_node001_deploy_address}
-            gateway: ${_param:deploy_network_gateway}
+#        cmp001:
+#          interface:
+#            mac: 00:50:56:ad:b6:bf
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:openstack_compute_node001_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#        osd001:
+#          interface:
+#            mac: 00:50:56:ad:b6:bf
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:ceph_osd_node001_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
