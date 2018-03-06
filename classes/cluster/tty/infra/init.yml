@@ -48,9 +48,9 @@ parameters:
     infra_kvm_node02_address: 10.0.0.196
     infra_kvm_node02_deploy_address: 192.168.1.196
     infra_kvm_node02_hostname: kvm02
-    infra_kvm_node01_address: 10.0.0.197
-    infra_kvm_node01_deploy_address: 192.168.1.197
-    infra_kvm_node02_hostname: kvm03
+    infra_kvm_node03_address: 10.0.0.197
+    infra_kvm_node03_deploy_address: 192.168.1.197
+    infra_kvm_node03_hostname: kvm03
     
     glusterfs_node01_address: ${_param:infra_kvm_node03_address}
     linux_deploy_interface:
