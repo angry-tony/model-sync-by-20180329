@@ -10,7 +10,7 @@ classes:
 - system.backupninja.client.single
 - system.xtrabackup.server.single
 - system.reclass.storage.system.physical_control_cluster
-- system.reclass.storage.system.cicd_control_cluster
+#- system.reclass.storage.system.cicd_control_cluster
 - cluster.tty.infra.maas
 - cluster.tty.infra
 parameters:
@@ -82,12 +82,12 @@ parameters:
             linux_system_codename: xenial
             single_address: ${_param:aptly_server_control_address}
             deploy_address: ${_param:aptly_server_deploy_address}
-        cicd_control_node01:
-          params:
-            deploy_address: ${_param:cicd_control_node01_deploy_address}
-        cicd_control_node02:
-          params:
-            deploy_address: ${_param:cicd_control_node02_deploy_address}
-        cicd_control_node03:
-          params:
-            deploy_address: ${_param:cicd_control_node03_deploy_address}
+#        cicd_control_node01:
+#          params:
+#            deploy_address: ${_param:cicd_control_node01_deploy_address}
+#        cicd_control_node02:
+#          params:
+#            deploy_address: ${_param:cicd_control_node02_deploy_address}
+#        cicd_control_node03:
+#          params:
+#            deploy_address: ${_param:cicd_control_node03_deploy_address}
