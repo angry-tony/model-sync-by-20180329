@@ -1,12 +1,8 @@
 classes:
 - system.linux.system.repo_local.mcp.salt
 - system.linux.system.repo_local.mcp.extra
-- system.linux.system.repo_local.mcp.apt_mirantis.openstack
 - system.linux.system.repo_local.mcp.apt_mirantis.ubuntu
-- system.linux.system.repo_local.mcp.apt_mirantis.glusterfs
 - system.openssh.client.lab
-- system.glusterfs.client.cluster
-- system.glusterfs.client.volume.salt_pki
 - system.salt.master.pkg
 - system.salt.minion.ca.salt_master
 - system.salt.master.api
@@ -14,20 +10,7 @@ classes:
 - system.backupninja.client.single
 - system.xtrabackup.server.single
 - system.reclass.storage.system.physical_control_cluster
-- system.reclass.storage.system.openstack_gateway_cluster
-- system.reclass.storage.system.openstack_control_cluster
-- system.reclass.storage.system.openstack_proxy_cluster
-- system.reclass.storage.system.openstack_database_cluster
-- system.reclass.storage.system.openstack_message_queue_cluster
-- system.reclass.storage.system.openstack_benchmark_single
-- system.reclass.storage.system.openstack_control_upgrade_single
-- system.reclass.storage.system.stacklight_log_cluster
-- system.reclass.storage.system.stacklight_telemetry_cluster
-- system.reclass.storage.system.stacklightv2_server_cluster
-- system.reclass.storage.system.oss_cluster
 - system.reclass.storage.system.cicd_control_cluster
-- system.reclass.storage.system.ceph_mon_cluster
-- system.reclass.storage.system.ceph_rgw_cluster
 - cluster.tty.infra.maas
 - cluster.tty.infra
 parameters:
@@ -71,3 +54,40 @@ parameters:
     storage:
       data_source:
         engine: local
+      node:
+        infra_kvm_node01:
+          params:
+            keepalived_vip_priority: 100
+            linux_system_codename: xenial
+        infra_kvm_node02:
+          params:
+            keepalived_vip_priority: 101
+            linux_system_codename: xenial
+        infra_kvm_node03:
+          classes:
+          - system.backupninja.server.single
+          params:
+            keepalived_vip_priority: 102
+            linux_system_codename: xenial
+          classes:
+#          - system.ceph.backup.server.single
+          - system.backupninja.server.single
+        aptly_server_node01:
+          name: ${_param:aptly_server_hostname}01
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.cicd.aptly
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename: xenial
+            single_address: ${_param:aptly_server_control_address}
+            deploy_address: ${_param:aptly_server_deploy_address}
+        cicd_control_node01:
+          params:
+            deploy_address: ${_param:cicd_control_node01_deploy_address}
+        cicd_control_node02:
+          params:
+            deploy_address: ${_param:cicd_control_node02_deploy_address}
+        cicd_control_node03:
+          params:
+            deploy_address: ${_param:cicd_control_node03_deploy_address}

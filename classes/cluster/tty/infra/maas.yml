@@ -27,12 +27,12 @@ parameters:
     region:
       subnets:
         deploy_network:
-          cidr: 192.168.1.0/24
+          cidr: 10.0.0.0/24
           fabric: deploy_network
-          gateway_ip: 192.168.1.1
+          gateway_ip: 10.0.0.1
           iprange:
-            end: 192.168.1.220
-            start: 192.168.1.205
+            end: 192.168.1.250
+            start: 192.168.1.100
       fabrics:
         deploy_network:
           description: Fabric for deploy_network
