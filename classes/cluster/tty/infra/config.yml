@@ -73,7 +73,7 @@ parameters:
 #          - system.ceph.backup.server.single
           - system.backupninja.server.single
         aptly_server_node01:
-          name: ${_param:aptly_server_hostname}01
+          name: ${_param:aptly_server_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.cicd.aptly
