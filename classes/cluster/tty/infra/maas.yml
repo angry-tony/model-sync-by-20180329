@@ -25,17 +25,17 @@ parameters:
 # Sample MaaS Configuration
   maas:
     region:
-      subnets:
-        deploy_network:
-          cidr: 192.168.10.0/24
-          fabric: deploy_network
-          gateway_ip: 192.168.10.1
-          iprange:
-            end: 192.168.10.254
-            start: 192.168.10.154
-      fabrics:
-        deploy_network:
-          description: Fabric for deploy_network
+#      subnets:
+#        deploy_network:
+#          cidr: 192.168.10.0/24
+#          fabric: deploy_network
+#          gateway_ip: 192.168.10.1
+#          iprange:
+#            end: 192.168.10.254
+#            start: 192.168.10.154
+#      fabrics:
+#        deploy_network:
+#          description: Fabric for deploy_network
       machines:
         kvm01:
           interface:
