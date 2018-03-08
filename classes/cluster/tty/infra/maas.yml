@@ -44,6 +44,8 @@ parameters:
             mode: static
             ip: ${_param:infra_kvm_node01_deploy_address}
             gateway: ${_param:deploy_network_gateway}
+          power_parameters:
+            manual_type: manual
         kvm02:
           interface:
             mac: 00:50:56:ad:aa:01
@@ -51,6 +53,8 @@ parameters:
             mode: static
             ip: ${_param:infra_kvm_node02_deploy_address}
             gateway: ${_param:deploy_network_gateway}
+          power_parameters:
+            manual_type: manual
         kvm03:
           interface:
             mac: 00:50:56:ad:30:67
