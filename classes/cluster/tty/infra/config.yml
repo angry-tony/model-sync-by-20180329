@@ -1,16 +1,33 @@
 classes:
 - system.linux.system.repo_local.mcp.salt
 - system.linux.system.repo_local.mcp.extra
+#- system.linux.system.repo_local.mcp.apt_mirantis.openstack
 - system.linux.system.repo_local.mcp.apt_mirantis.ubuntu
+#- system.linux.system.repo_local.mcp.apt_mirantis.glusterfs
 - system.openssh.client.lab
+#- system.glusterfs.client.cluster
+#- system.glusterfs.client.volume.salt_pki
 - system.salt.master.pkg
 - system.salt.minion.ca.salt_master
 - system.salt.master.api
 - system.reclass.storage.salt
 - system.backupninja.client.single
 - system.xtrabackup.server.single
+#- system.reclass.storage.system.openstack_gateway_cluster
+#- system.reclass.storage.system.openstack_control_cluster
+#- system.reclass.storage.system.openstack_proxy_cluster
+#- system.reclass.storage.system.openstack_database_cluster
+#- system.reclass.storage.system.openstack_message_queue_cluster
+#- system.reclass.storage.system.openstack_benchmark_single
+#- system.reclass.storage.system.openstack_control_upgrade_single
+#- system.reclass.storage.system.stacklight_log_cluster
+#- system.reclass.storage.system.stacklight_telemetry_cluster
+#- system.reclass.storage.system.stacklightv2_server_cluster
+#- system.reclass.storage.system.oss_cluster
+#- system.reclass.storage.system.ceph_mon_cluster
+#- system.reclass.storage.system.ceph_rgw_cluster
 - system.reclass.storage.system.physical_control_cluster
-#- system.reclass.storage.system.cicd_control_cluster
+- system.reclass.storage.system.cicd_control_cluster
 - cluster.tty.infra.maas
 - cluster.tty.infra
 parameters:
@@ -24,6 +41,7 @@ parameters:
     linux_system_codename: xenial
     salt_api_password_hash: "$6$NyWQYHbw$UwiyodGBEtFzvEM/whqs7ZLygznoqdmMTfbo1ghnbuF1Gb2AQAz4AGh2N5QugCGNn0xeOTf.bA00wOuqVbMkU0"
     salt_master_host: ${_param:infra_config_deploy_address}
+    backupninja_backup_host: ${_param:infra_kvm_node03_address}
   linux:
     network:
       interface:
@@ -82,12 +100,12 @@ parameters:
             linux_system_codename: xenial
             single_address: ${_param:aptly_server_control_address}
             deploy_address: ${_param:aptly_server_deploy_address}
-#        cicd_control_node01:
-#          params:
-#            deploy_address: ${_param:cicd_control_node01_deploy_address}
-#        cicd_control_node02:
-#          params:
-#            deploy_address: ${_param:cicd_control_node02_deploy_address}
-#        cicd_control_node03:
-#          params:
-#            deploy_address: ${_param:cicd_control_node03_deploy_address}
+        cicd_control_node01:
+          params:
+            deploy_address: ${_param:cicd_control_node01_deploy_address}
+        cicd_control_node02:
+          params:
+            deploy_address: ${_param:cicd_control_node02_deploy_address}
+        cicd_control_node03:
+          params:
+            deploy_address: ${_param:cicd_control_node03_deploy_address}
