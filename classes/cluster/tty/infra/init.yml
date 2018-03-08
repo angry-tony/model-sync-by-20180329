@@ -8,8 +8,8 @@ classes:
 #- system.telegraf.agent
 #- system.prometheus.collector
 #- service.grafana.collector
-- cluster.tty.oss
-- cluster.tty.ceph
+#- cluster.tty.oss
+#- cluster.tty.ceph
 - cluster.tty.cicd
 parameters:
   _param:
