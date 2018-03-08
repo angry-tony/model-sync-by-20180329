@@ -23,8 +23,8 @@ parameters:
       saltstack_repo_xenial: "http://${_param:local_repo_url}/ubuntu-xenial ${_param:apt_mk_version} salt"
 
 # Sample MaaS Configuration
-  maas:
-    region:
+#  maas:
+#    region:
 #      subnets:
 #        deploy_network:
 #          cidr: 192.168.10.0/24
@@ -36,34 +36,34 @@ parameters:
 #      fabrics:
 #        deploy_network:
 #          description: Fabric for deploy_network
-      machines:
-        kvm01:
-          interface:
-            mac: 00:50:56:ad:ab:a2
-            subnet: deploy_network
-            mode: static
-            ip: ${_param:infra_kvm_node01_deploy_address}
-            gateway: ${_param:deploy_network_gateway}
-          power_parameters:
-            manual_type: manual
-        kvm02:
-          interface:
-            mac: 00:50:56:ad:aa:01
-            subnet: deploy_network
-            mode: static
-            ip: ${_param:infra_kvm_node02_deploy_address}
-            gateway: ${_param:deploy_network_gateway}
-          power_parameters:
-            manual_type: manual
-        kvm03:
-          interface:
-            mac: 00:50:56:ad:30:67
-            subnet: deploy_network
-            mode: static
-            ip: ${_param:infra_kvm_node03_deploy_address}
-            gateway: ${_param:deploy_network_gateway}
-          power_parameters:
-            manual_type: manual
+#      machines:
+#        kvm01:
+#          interface:
+#            mac: 00:50:56:ad:ab:a2
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:infra_kvm_node01_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            manual_type: manual
+#        kvm02:
+#          interface:
+#            mac: 00:50:56:ad:aa:01
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:infra_kvm_node02_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            manual_type: manual
+#        kvm03:
+#          interface:
+#            mac: 00:50:56:ad:30:67
+#            subnet: deploy_network
+#            mode: static
+#            ip: ${_param:infra_kvm_node03_deploy_address}
+#            gateway: ${_param:deploy_network_gateway}
+#          power_parameters:
+#            manual_type: manual
 #        cmp001:
 #          interface:
 #            mac: 00:50:56:ad:b6:bf
