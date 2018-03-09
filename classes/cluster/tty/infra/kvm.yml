@@ -33,8 +33,8 @@ parameters:
     cluster_node03_address: ${_param:infra_kvm_node03_address}
     keepalived_vip_interface: br_ctl
     keepalived_vip_virtual_router_id: 69
-    deploy_nic: ens160
-    control_nic: ens192
+    deploy_nic: eth0
+    control_nic: eth1
 #    primary_first_nic: eth1
 #    primary_second_nic: eth2
   salt:
@@ -136,20 +136,20 @@ parameters:
   virt:
     nic:
       default:
-        ens160:
+        eth0:
           bridge: br_mgm
-        ens192:
+        eth1:
           bridge: br_ctl
   linux:
     network:
       bridge: linux
       interface:
-        ens160:
+        eth0:
           enabled: true
           type: eth
           proto: manual
           name: ${_param:deploy_nic}
-        ens192:
+        eth1:
           enabled: true
           type: eth
           proto: manual
