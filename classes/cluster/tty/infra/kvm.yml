@@ -33,9 +33,10 @@ parameters:
     cluster_node03_address: ${_param:infra_kvm_node03_address}
     keepalived_vip_interface: br_ctl
     keepalived_vip_virtual_router_id: 69
-    deploy_nic: eth0
-    primary_first_nic: eth1
-    primary_second_nic: eth2
+    deploy_nic: ens160
+    control_nic: ens192
+#    primary_first_nic: eth1
+#    primary_second_nic: eth2
   salt:
     control:
       size: #RAM 4096,8192,16384,32768,65536
@@ -109,7 +110,7 @@ parameters:
         internal:
           node:
             bmk01:
-#              image: ${_param:salt_control_xenial_image}
+              image: ${_param:salt_control_xenial_image}
 #            ctl01:
 #              image: ${_param:salt_control_xenial_image}
 #            ctl02:
@@ -135,31 +136,30 @@ parameters:
   virt:
     nic:
       default:
-        eth0:
+        ens160:
           bridge: br_mgm
-        eth1:
+        ens192:
           bridge: br_ctl
   linux:
     network:
       bridge: linux
       interface:
-        eth0:
+        ens160:
           enabled: true
           type: eth
           proto: manual
           name: ${_param:deploy_nic}
-        eth1:
+        ens192:
           enabled: true
-          type: slave
+          type: eth
           proto: manual
-          name: ${_param:primary_first_nic}
-          master: bond0
-        eth2:
-          enabled: true
-          type: slave
-          proto: manual
-          name: ${_param:primary_second_nic}
-          master: bond0
+          name: ${_param:control_nic}
+#        eth2:
+#          enabled: true
+#           type: slave
+#          proto: manual
+#          name: ${_param:primary_second_nic}
+#          master: bond0
         br_mgm:
           enabled: true
           proto: static
@@ -195,7 +195,8 @@ parameters:
           address: ${_param:single_address}
           netmask: ${_param:control_network_netmask}
           use_interfaces:
-          - ${_param:control_vlan}
+          - ${_param:control_nic}
+#          - ${_param:control_vlan}
 #          - bond0.${_param:control_vlan}
 
   #   system:
@@ -216,5 +217,4 @@ parameters:
   #         # Password is cloudlab, comment out, configure your SSH key bellow
   #         # and disable password auth
   #         password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
-
 
