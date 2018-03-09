@@ -1,7 +1,7 @@
 classes:
 - system.linux.system.single
-#- system.rsyslog.client.single
-#- cluster.tty.openstack
+- system.rsyslog.client.single
+- cluster.tty.openstack
 #- cluster.tty.stacklight
 #- system.heka.log_collector.single
 #- system.heka.log_collector.output.telegraf
