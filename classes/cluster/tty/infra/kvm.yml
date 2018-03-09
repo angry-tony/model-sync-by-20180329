@@ -144,14 +144,14 @@ parameters:
           bridge: br_mgm
         eth192:
           bridge: br_ctl
-        eth224:
-          bridge: br_pry
-        eth256:
-          bridge: br_pub
-        eth161:
-          bridge: br_sto
-        eth193:
-          bridge: br_dat
+#        eth224:
+#          bridge: br_pry
+#        eth256:
+#          bridge: br_pub
+#        eth161:
+#          bridge: br_sto
+#        eth193:
+#          bridge: br_dat
   linux:
     network:
       bridge: linux
@@ -166,26 +166,26 @@ parameters:
           type: eth
           proto: manual
           name: ${_param:control_nic}
-        eth224:
-          enabled: true
-          type: eth
-          proto: manual
-          name: ${_param:proxy_nic}
-        eth256:
-          enabled: true
-          type: eth
-          proto: manual
-          name: ${_param:public_nic}
-        eth161:
-          enabled: true
-          type: eth
-          proto: manual
-          name: ${_param:storage_nic}
-        eth193:
-          enabled: true
-          type: eth
-          proto: manual
-          name: ${_param:data_nic}
+#        eth224:
+#          enabled: true
+#          type: eth
+#          proto: manual
+#          name: ${_param:proxy_nic}
+#        eth256:
+#          enabled: true
+#          type: eth
+#          proto: manual
+#          name: ${_param:public_nic}
+#        eth161:
+#          enabled: true
+#          type: eth
+#          proto: manual
+#          name: ${_param:storage_nic}
+#        eth193:
+#          enabled: true
+#          type: eth
+#          proto: manual
+#          name: ${_param:data_nic}
         br_mgm:
           enabled: true
           proto: static
@@ -206,38 +206,38 @@ parameters:
           netmask: ${_param:control_network_netmask}
           use_interfaces:
           - ${_param:control_nic}
-        br_pry:
-          enabled: true
-          type: bridge
-          proto: static
-          address: ${_param:proxy_address}
-          netmask: ${_param:control_network_netmask}
-          use_interfaces:
-          - ${_param:proxy_nic}
-        br_pub:
-          enabled: true
-          type: bridge
-          proto: static
-          address: ${_param:public_address}
-          netmask: ${_param:public_network_netmask}
-          use_interfaces:
-          - ${_param:public_nic}
-        br_sto:
-          enabled: true
-          type: bridge
-          proto: static
-          address: ${_param:storage_address}
-          netmask: ${_param:storage_network_netmask}
-          use_interfaces:
-          - ${_param:storage_nic}
-        br_dat:
-          enabled: true
-          type: bridge
-          proto: static
-          address: ${_param:data_address}
-          netmask: ${_param:data_network_netmask}
-          use_interfaces:
-          - ${_param:data_nic}
+ #      br_pry:
+ #        enabled: true
+ #        type: bridge
+ #        proto: static
+ #        address: ${_param:proxy_address}
+ #        netmask: ${_param:control_network_netmask}
+ #        use_interfaces:
+ #        - ${_param:proxy_nic}
+ #      br_pub:
+ #        enabled: true
+ #        type: bridge
+ #        proto: static
+ #        address: ${_param:public_address}
+ #         netmask: ${_param:public_network_netmask}
+ #         use_interfaces:
+ #         - ${_param:public_nic}
+ #       br_sto:
+ #         enabled: true
+ #         type: bridge
+ #         proto: static
+ #         address: ${_param:storage_address}
+ #         netmask: ${_param:storage_network_netmask}
+ #         use_interfaces:
+ #         - ${_param:storage_nic}
+ #       br_dat:
+ #         enabled: true
+ #         type: bridge
+ #         proto: static
+ #         address: ${_param:data_address}
+ #         netmask: ${_param:data_network_netmask}
+ #         use_interfaces:
+ #         - ${_param:data_nic}
 
 
   #   system:
