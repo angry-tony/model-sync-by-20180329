@@ -109,13 +109,13 @@ parameters:
         internal:
           node:
             bmk01:
-              image: ${_param:salt_control_xenial_image}
-            ctl01:
-              image: ${_param:salt_control_xenial_image}
-            ctl02:
-              image: ${_param:salt_control_xenial_image}
-            ctl03:
-              image: ${_param:salt_control_xenial_image}
+#              image: ${_param:salt_control_xenial_image}
+#            ctl01:
+#              image: ${_param:salt_control_xenial_image}
+#            ctl02:
+#              image: ${_param:salt_control_xenial_image}
+#            ctl03:
+#              image: ${_param:salt_control_xenial_image}
 #            dbs01:
 #              image: ${_param:salt_control_xenial_image}
 #            dbs02:
