@@ -38,6 +38,10 @@ parameters:
     reclass_config_master: ${_param:infra_config_deploy_address}
     single_address: ${_param:infra_config_address}
     deploy_address: ${_param:infra_config_deploy_address}
+    proxy_address: ${_param:infra_proxy_address}
+    public_address: ${_param:infra_public_address}
+    storage_address: ${_param:infra_storage_address}
+    data_address: ${_param:infra_data_address}
     linux_system_codename: xenial
     salt_api_password_hash: "$6$NyWQYHbw$UwiyodGBEtFzvEM/whqs7ZLygznoqdmMTfbo1ghnbuF1Gb2AQAz4AGh2N5QugCGNn0xeOTf.bA00wOuqVbMkU0"
     salt_master_host: ${_param:infra_config_deploy_address}
