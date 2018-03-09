@@ -32,6 +32,10 @@ parameters:
     # infra service addresses
     infra_config_address: 192.168.11.11
     infra_config_deploy_address: 192.168.10.11
+    infra_config_proxy_address: 192.168.12.11
+    infra_config_public_address: 192.168.13.11
+    infra_config_storage_address: 192.168.14.11
+    infra_config_data_address: 192.168.15.11
 
     cluster_domain: tty.local
     cluster_name: tty
@@ -39,6 +43,10 @@ parameters:
     
     control_network_netmask: 255.255.255.0
     tenant_network_netmask: 255.255.255.0
+    proxy_network_netmask: 255.255.255.0
+    public_network_netmask: 255.255.255.0
+    data_network_netmask: 255.255.255.0
+    storage_network_netmask: 255.255.255.0
     control_vlan: 11
     tenant_vlan: 15
 
