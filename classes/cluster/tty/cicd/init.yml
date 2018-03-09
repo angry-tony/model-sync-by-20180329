@@ -1,13 +1,13 @@
 
 parameters:
   _param:
-    cicd_control_address: 192.168.11.90
-    cicd_control_node01_address: 192.168.11.91
-    cicd_control_node02_address: 192.168.11.92
-    cicd_control_node03_address: 192.168.11.93
-    cicd_control_node01_deploy_address: 192.168.10.91
-    cicd_control_node02_deploy_address: 192.168.10.92
-    cicd_control_node03_deploy_address: 192.168.10.93
+    cicd_control_address: 192.168.11.20
+    cicd_control_node01_address: 192.168.11.21
+    cicd_control_node02_address: 192.168.11.22
+    cicd_control_node03_address: 192.168.11.23
+    cicd_control_node01_deploy_address: 192.168.10.21
+    cicd_control_node02_deploy_address: 192.168.10.22
+    cicd_control_node03_deploy_address: 192.168.10.23
     cicd_control_hostname: cid
     cicd_control_node01_hostname: cid01
     cicd_control_node02_hostname: cid02
