@@ -35,8 +35,8 @@ classes:
 
   - system.docker.swarm.master
 
-  - cluster.inspur.infra
-  - cluster.inspur.cicd.control
+  - cluster.tty.infra
+  - cluster.tty.cicd.control
 
 parameters:
   _param:

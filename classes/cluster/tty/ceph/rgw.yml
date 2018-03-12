@@ -1,9 +1,9 @@
 classes:
 - system.ceph.rgw.cluster
 - system.ceph.rgw.keystone
-- cluster.inspur.ceph
-- cluster.inspur.ceph.common
-- cluster.inspur.infra
+- cluster.tty.ceph
+- cluster.tty.ceph.common
+- cluster.tty.infra
 parameters:
   _param:
     keepalived_vip_interface: ens3

@@ -1,0 +1,55 @@
+
+classes:
+- system.linux.system.repo_local.mcp.extra
+- system.linux.system.repo_local.mcp.apt_mirantis.openstack
+- system.linux.system.repo_local.mcp.apt_mirantis.ubuntu
+- system.linux.system.repo_local.mcp.apt_mirantis.saltstack_2016_3
+- system.neutron.gateway.cluster
+- system.neutron.gateway.notification.messagingv2
+- cluster.inspur.infra
+parameters:
+  _param:
+    interface_mtu: 1500
+    cluster_vip_address: ${_param:openstack_control_address}
+
+    linux_system_codename: xenial
+    keepalived_vip_interface: br-ctl
+    keepalived_vip_virtual_router_id: 69
+    contorl_network_nic: eth1
+    data_network_nic: eth2
+  linux:
+    network:
+      bridge: openvswitch
+      interface:
+        eth0: ${_param:linux_deploy_interface}
+        eth1:
+          enabled: true
+          type: eth
+          proto: manual
+          name: ${_param:contorl_network_nic}
+        eth2:
+          enabled: true
+          type: eth
+          proto: manual
+          ovs_bridge: br-floating
+          ovs_type: OVSPort
+          name: ${_param:data_network_nic}
+        br-floating:
+          enabled: true
+          type: ovs_bridge
+        br_ctl:
+          enabled: true
+          type: bridge
+          proto: static
+          address: ${_param:single_address}
+          netmask: ${_param:control_network_netmask}
+          use_interfaces:
+          - ${_param:control_network_nic}
+        br-mesh:
+          enabled: true
+          type: ovs_port
+          bridge: br-floating
+          proto: static
+          ovs_options: tag=${_param:tenant_vlan}
+          address: ${_param:tenant_address}
+          netmask: ${_param:tenant_network_netmask}

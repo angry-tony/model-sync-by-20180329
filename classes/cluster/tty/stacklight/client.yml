@@ -8,10 +8,10 @@ classes:
 - system.docker.swarm.stack.monitoring.remote_agent.ceph_common
 
 
-#- cluster.inspur.infra
-#- cluster.inspur.cicd.control
+#- cluster.tty.infra
+#- cluster.tty.cicd.control
 
-- cluster.inspur.infra
+- cluster.tty.infra
 parameters:
   _param:
     docker_image_alertmanager: ${_param:aptly_server_hostname}:5000/alertmanager:latest

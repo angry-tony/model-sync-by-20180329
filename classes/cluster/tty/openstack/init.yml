@@ -82,46 +82,47 @@ parameters:
     openstack_notification_topics: "notifications,${_param:stacklight_notification_topic}"
 
     # openstack service addresses
-    openstack_proxy_address: 192.168.11.70
-    openstack_proxy_node01_address: 192.168.11.71
-    openstack_proxy_node02_address: 192.168.11.72
-    openstack_proxy_node03_address: 192.168.11.73
-    openstack_control_address: 192.168.11.30
-    openstack_control_node01_address: 192.168.11.31
-    openstack_control_node02_address: 192.168.11.32
-    openstack_control_node03_address: 192.168.11.33
-    openstack_database_address: 192.168.11.40
-    openstack_database_node01_address: 192.168.11.41
-    openstack_database_node02_address: 192.168.11.42
-    openstack_database_node03_address: 192.168.11.43
-    openstack_message_queue_address: 192.168.11.50
-    openstack_message_queue_node01_address: 192.168.11.51
-    openstack_message_queue_node02_address: 192.168.11.52
-    openstack_message_queue_node03_address: 192.168.11.53
     openstack_upgrade_node01_hostname: upg01
     openstack_upgrade_node01_address: 192.168.11.15
-    openstack_proxy_node01_deploy_address: 192.168.10.71
-    openstack_proxy_node02_deploy_address: 192.168.10.72
-    openstack_proxy_node03_deploy_address: 192.168.10.73
-    openstack_control_node01_deploy_address: 192.168.10.31
-    openstack_control_node02_deploy_address: 192.168.10.32
-    openstack_control_node03_deploy_address: 192.168.10.33
-    openstack_database_node01_deploy_address: 192.168.10.41
-    openstack_database_node02_deploy_address: 192.168.10.42
-    openstack_database_node03_deploy_address: 192.168.10.43
-    openstack_message_queue_node01_deploy_address: 192.168.10.51
-    openstack_message_queue_node02_deploy_address: 192.168.10.52
-    openstack_message_queue_node03_deploy_address: 192.168.10.53
+    openstack_control_address: 192.168.11.25
+    openstack_control_node01_address: 192.168.11.26
+    openstack_control_node02_address: 192.168.11.27
+    openstack_control_node03_address: 192.168.11.28
+    openstack_database_address: 192.168.11.30
+    openstack_database_node01_address: 192.168.11.31
+    openstack_database_node02_address: 192.168.11.32
+    openstack_database_node03_address: 192.168.11.33
+    openstack_message_queue_address: 192.168.11.35
+    openstack_message_queue_node01_address: 192.168.11.36
+    openstack_message_queue_node02_address: 192.168.11.37
+    openstack_message_queue_node03_address: 192.168.11.38
+    openstack_gateway_node01_address: 192.168.11.41
+    openstack_gateway_node02_address: 192.168.11.42
+    openstack_gateway_node03_address: 192.168.11.43
+    openstack_proxy_address: 192.168.11.45
+    openstack_proxy_node01_address: 192.168.11.46
+    openstack_proxy_node02_address: 192.168.11.47
+    openstack_proxy_node03_address: 192.168.11.48
+    
     openstack_upgrade_node01_deploy_address: 192.168.10.15
-    openstack_gateway_node01_address: 192.168.11.61
-    openstack_gateway_node02_address: 192.168.11.62
-    openstack_gateway_node03_address: 192.168.11.63
-    openstack_gateway_node01_deploy_address: 192.168.10.61
-    openstack_gateway_node02_deploy_address: 192.168.10.62
-    openstack_gateway_node03_deploy_address: 192.168.10.63
-    openstack_gateway_node01_tenant_address: 192.168.15.61
-    openstack_gateway_node02_tenant_address: 192.168.15.62
-    openstack_gateway_node03_tenant_address: 192.168.15.63
+    openstack_control_node01_deploy_address: 192.168.10.26
+    openstack_control_node02_deploy_address: 192.168.10.27
+    openstack_control_node03_deploy_address: 192.168.10.28
+    openstack_database_node01_deploy_address: 192.168.10.31
+    openstack_database_node02_deploy_address: 192.168.10.32
+    openstack_database_node03_deploy_address: 192.168.10.33
+    openstack_message_queue_node01_deploy_address: 192.168.10.36
+    openstack_message_queue_node02_deploy_address: 192.168.10.37
+    openstack_message_queue_node03_deploy_address: 192.168.10.38
+    openstack_gateway_node01_deploy_address: 192.168.10.41
+    openstack_gateway_node02_deploy_address: 192.168.10.42
+    openstack_gateway_node03_deploy_address: 192.168.10.43
+    openstack_proxy_node01_deploy_address: 192.168.10.46
+    openstack_proxy_node02_deploy_address: 192.168.10.47
+    openstack_proxy_node03_deploy_address: 192.168.10.48
+    openstack_gateway_node01_tenant_address: 192.168.15.41
+    openstack_gateway_node02_tenant_address: 192.168.15.42
+    openstack_gateway_node03_tenant_address: 192.168.15.43
 
     # OpenStack Compute
     openstack_compute_rack01_single_subnet: 192.168.11

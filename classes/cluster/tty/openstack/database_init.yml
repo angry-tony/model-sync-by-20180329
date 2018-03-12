@@ -1,0 +1,6 @@
+classes:
+- system.mysql.client.single
+- system.xtrabackup.client.single
+parameters:
+  _param:
+    xtrabackup_qpress_source_name: http://${_param:aptly_server_hostname}:8078/qpress-11-linux-x64.tar

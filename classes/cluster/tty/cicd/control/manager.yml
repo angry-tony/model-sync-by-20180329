@@ -1,6 +1,6 @@
 classes:
   - system.docker.swarm.manager
-  - cluster.inspur.infra
-  - cluster.inspur.cicd.control
+  - cluster.tty.infra
+  - cluster.tty.cicd.control
 
 

@@ -9,8 +9,8 @@ classes:
 - system.influxdb.server.single
 - system.influxdb.database.ceilometer
 - system.influxdb.database.prometheus
-- cluster.inspur.stacklight
-- cluster.inspur.infra
+- cluster.tty.stacklight
+- cluster.tty.infra
 parameters:
   _param:
     keepalived_stacklight_telemetry_vip_address: ${_param:stacklight_telemetry_address}

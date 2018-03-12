@@ -9,8 +9,8 @@ classes:
 - system.keepalived.cluster.instance.stacklight_log_vip
 - system.elasticsearch.server.cluster
 - system.kibana.server.single
-- cluster.inspur.stacklight
-- cluster.inspur.infra
+- cluster.tty.stacklight
+- cluster.tty.infra
 parameters:
   _param:
     keepalived_stacklight_log_vip_address: ${_param:stacklight_log_address}

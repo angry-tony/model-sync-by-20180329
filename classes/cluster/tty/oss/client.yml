@@ -44,7 +44,7 @@ classes:
 - system.devops_portal.service.grafana
 - system.devops_portal.service.security_monkey
 - system.devops_portal.service.janitor_monkey
-- cluster.inspur.infra
+- cluster.tty.infra
 
 parameters:
   _param:
@@ -78,8 +78,10 @@ parameters:
     pushkin_smtp_port: 587
     pushkin_email_sender_password: password
     #..WebHook notification senders
-    webhook_from: kkalynovskyi@mirantis.com
-    webhook_recipients: kkalynovskyi@mirantis.com
+    #webhook_from: kkalynovskyi@mirantis.com
+    #webhook_from: kkalynovskyi@mirantis.com
+    webhook_recipients: qihuan.wu@sky-cloud.net
+    webhook_recipients: qihuan.wu@sky-cloud.net
     webhook_login_id: 13
     webhook_application_id: 24
     # SFDC configuration
@@ -181,7 +183,7 @@ parameters:
 
     # In case of using DOP through external proxy address
     rundeck_forward_iframe: False
-    rundeck_iframe_host: 192.168.2.80
+    rundeck_iframe_host: 192.168.11.80
     rundeck_iframe_port: 12313
     rundeck_iframe_ssl: False
 
