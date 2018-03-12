@@ -9,7 +9,7 @@ classes:
 - system.glance.control.storage.ceph
 - system.cinder.control.backend.ceph
 - system.ceph.common.cluster
-- cluster.inspur.ceph.common
+- cluster.tty.ceph.common
 - system.keystone.server.cluster
 - system.keystone.server.wsgi
 - system.keystone.server.notification.messagingv2
@@ -32,7 +32,7 @@ classes:
 - system.heka.ceilometer_collector.single
 - system.aodh.server.cluster
 - system.ceilometer.server.cluster
-- cluster.inspur.infra
+- cluster.tty.infra
 parameters:
   _param:
     keepalived_vip_interface: ens3

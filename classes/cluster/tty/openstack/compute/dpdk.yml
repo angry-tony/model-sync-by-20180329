@@ -1,3 +1,3 @@
 classes:
-- cluster.inspur.openstack.compute
+- cluster.tty.openstack.compute
 - system.neutron.compute.nfv.dpdk

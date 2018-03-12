@@ -6,7 +6,7 @@ classes:
 - system.linux.system.repo_local.mcp.apt_mirantis.saltstack_2016_3
 - system.neutron.gateway.cluster
 - system.neutron.gateway.notification.messagingv2
-- cluster.inspur.infra
+- cluster.tty.infra
 parameters:
   _param:
     interface_mtu: 1500

@@ -20,9 +20,9 @@ classes:
 - system.salt.minion.cert.proxy.pki
 - system.sphinx.server.doc.reclass
 - service.keepalived.cluster.single
-- cluster.inspur.infra
-- cluster.inspur.openstack.dashboard
-- cluster.inspur.stacklight.proxy
+- cluster.tty.infra
+- cluster.tty.openstack.dashboard
+- cluster.tty.stacklight.proxy
 - system.nginx.server.proxy.oss.devops_portal
 - system.nginx.server.proxy.oss.rundeck
 parameters:

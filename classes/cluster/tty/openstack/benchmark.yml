@@ -2,7 +2,7 @@
 classes:
 - system.linux.system.repo_local.mcp.extra
 - system.linux.system.repo_local.ubuntu
-- cluster.inspur.infra
+- cluster.tty.infra
 parameters:
   linux:
     network:

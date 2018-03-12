@@ -17,7 +17,7 @@ classes:
 - system.rabbitmq.server.single
 - system.rabbitmq.server.vhost.openstack
 - system.backupninja.server.single
-- cluster.inspur.infra
+- cluster.tty.infra
 parameters:
   _param:
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080

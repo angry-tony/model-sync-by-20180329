@@ -5,7 +5,7 @@ classes:
 - system.linux.system.repo_local.mcp.apt_mirantis.saltstack_2016_3
 - system.rabbitmq.server.cluster
 - system.rabbitmq.server.vhost.openstack
-- cluster.inspur.infra
+- cluster.tty.infra
 parameters:
   _param:
     keepalived_vip_interface: ens3
