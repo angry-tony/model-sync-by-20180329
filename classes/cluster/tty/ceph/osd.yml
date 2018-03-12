@@ -1,0 +1,69 @@
+classes:
+- system.ceph.osd.cluster
+- system.ceph.backup.client.single
+- cluster.inspur.ceph.common
+parameters:
+  _param:
+    ceph_remote_backup_server: ${_param:infra_kvm_node03_address}
+    ceph_osd_control_nic: eth1
+    ceph_osd_backup_nic: eth2
+  ceph:
+    osd:
+      enabled: true
+      crush_parent: ${_param:ceph_crush_parent}
+      bluestore_block_db_size: 21474836480
+      backend:
+        bluestore:
+          disks:
+            - dev: /dev/vdd
+              block_db: /dev/vdb
+#              class: hdd
+#              weight: 1.5
+            - dev: /dev/vde
+              block_db: /dev/vdb
+#              class: hdd
+#              weight: 1.5
+            - dev: /dev/vdf
+              block_db: /dev/vdb
+#              class: hdd
+#              weight: 1.5
+  linux:
+    network:
+      interface:
+        eth0: ${_param:linux_deploy_interface}
+        eth1:
+          mtu: 1500
+          enabled: true
+          type: eth
+          proto: static
+          address: ${_param:single_address}
+          netmask: ${_param:control_network_netmask}
+          name: ${_param:ceph_osd_control_nic}
+        eth2:
+          mtu: 1500
+          enabled: true
+          type: eth
+          proto: static
+          address: ${_param:backend_address}
+          netmask: ${_param:backend_network_netmask}
+          name: ${_param:ceph_osd_primary_second_nic}
+    # bond for cluster communication on _param:public_network
+#        bond1.1:
+#          name: bond1.${_param:control_vlan}
+#          enabled: true
+#          type: vlan
+#          proto: static
+#          address: ${_param:single_address}
+#          netmask: ${_param:control_network_netmask}
+#          use_interfaces:
+#          - bond1
+    # bond for OSD data replication on _param:cluster_network
+#        bond1.2:
+#          name: bond1.${_param:backend_vlan}
+#          enabled: true
+#          type: vlan
+#          proto: static
+#          address: ${_param:backend_address}
+#          netmask: ${_param:backend_network_netmask}
+#          use_interfaces:
+#          - bond1

@@ -1,0 +1,75 @@
+parameters:
+  _param:
+    linux_repo_ceph_component: ${_param:ceph_version}
+    ceph_version: luminous
+
+    ceph_mon_node01_hostname: cmn01
+    ceph_mon_node02_hostname: cmn02
+    ceph_mon_node03_hostname: cmn03
+    ceph_mon_node01_address: 192.168.11.66
+    ceph_mon_node02_address: 192.168.11.67
+    ceph_mon_node03_address: 192.168.11.68
+
+    ceph_rgw_hostname: rgw
+    ceph_rgw_node01_hostname: rgw01
+    ceph_rgw_node02_hostname: rgw02
+    ceph_rgw_node03_hostname: rgw03
+    ceph_rgw_address: 192.168.11.75
+    ceph_rgw_node01_address: 192.168.11.76
+    ceph_rgw_node02_address: 192.168.11.77
+    ceph_rgw_node03_address: 192.168.11.78
+    ceph_mon_node01_deploy_address: 192.168.10.66
+    ceph_mon_node02_deploy_address: 192.168.10.67
+    ceph_mon_node03_deploy_address: 192.168.10.68
+    ceph_rgw_node01_deploy_address: 192.168.10.76
+    ceph_rgw_node02_deploy_address: 192.168.10.77
+    ceph_rgw_node03_deploy_address: 192.168.10.78
+    ceph_osd_rack01_deploy_subnet: 192.168.10
+    ceph_osd_node001_deploy_address: ${_param:ceph_osd_rack01_deploy_subnet}.221
+    ceph_osd_node002_deploy_address: ${_param:ceph_osd_rack01_deploy_subnet}.222
+    ceph_osd_node003_deploy_address: ${_param:ceph_osd_rack01_deploy_subnet}.223
+    ceph_osd_rack01_hostname: osd
+
+    backend_vlan: 105
+    ceph_cluster_fsid: "8pht0r8q-s74v-a7yk-21r4-e1012n2gmbd5"
+    ceph_osd_rack01_single_subnet: 192.168.11
+    ceph_osd_rack01_backend_subnet: 192.168.14
+    backend_network_netmask: 255.255.255.0
+  linux:
+    network:
+      host:
+        cmn01:
+          address: ${_param:ceph_mon_node01_address}
+          names:
+          - ${_param:ceph_mon_node01_hostname}
+          - ${_param:ceph_mon_node01_hostname}.${_param:cluster_domain}
+        cmn02:
+          address: ${_param:ceph_mon_node02_address}
+          names:
+          - ${_param:ceph_mon_node02_hostname}
+          - ${_param:ceph_mon_node02_hostname}.${_param:cluster_domain}
+        cmn03:
+          address: ${_param:ceph_mon_node03_address}
+          names:
+          - ${_param:ceph_mon_node03_hostname}
+          - ${_param:ceph_mon_node03_hostname}.${_param:cluster_domain}
+        rgw:
+          address: ${_param:ceph_rgw_address}
+          names:
+          - ${_param:ceph_rgw_hostname}
+          - ${_param:ceph_rgw_hostname}.${_param:cluster_domain}
+        rgw01:
+          address: ${_param:ceph_rgw_node01_address}
+          names:
+          - ${_param:ceph_rgw_node01_hostname}
+          - ${_param:ceph_rgw_node01_hostname}.${_param:cluster_domain}
+        rgw02:
+          address: ${_param:ceph_rgw_node02_address}
+          names:
+          - ${_param:ceph_rgw_node02_hostname}
+          - ${_param:ceph_rgw_node02_hostname}.${_param:cluster_domain}
+        rgw03:
+          address: ${_param:ceph_rgw_node03_address}
+          names:
+          - ${_param:ceph_rgw_node03_hostname}
+          - ${_param:ceph_rgw_node03_hostname}.${_param:cluster_domain}
