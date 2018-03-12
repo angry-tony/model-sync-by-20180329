@@ -1,15 +1,15 @@
 classes:
 - system.linux.system.single
 - system.rsyslog.client.single
-#- cluster.tty.openstack
-#- cluster.tty.stacklight
-#- system.heka.log_collector.single
-#- system.heka.log_collector.output.telegraf
-#- system.telegraf.agent
-#- system.prometheus.collector
-#- service.grafana.collector
-#- cluster.tty.oss
-#- cluster.tty.ceph
+- system.heka.log_collector.single
+- system.heka.log_collector.output.telegraf
+- system.telegraf.agent
+- system.prometheus.collector
+- service.grafana.collector
+- cluster.tty.openstack
+- cluster.tty.stacklight
+- cluster.tty.oss
+- cluster.tty.ceph
 - cluster.tty.cicd
 parameters:
   _param:

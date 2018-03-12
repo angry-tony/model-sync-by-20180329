@@ -1,7 +1,7 @@
 
 classes:
 - system.linux.system.repo_local.mcp.extra
-#- system.linux.system.repo_local.mcp.apt_mirantis.openstack
+- system.linux.system.repo_local.mcp.apt_mirantis.openstack
 - system.linux.system.repo_local.mcp.apt_mirantis.ubuntu
 - system.linux.system.repo_local.mcp.apt_mirantis.glusterfs
 - system.linux.system.repo_local.mcp.apt_mirantis.saltstack_2016_3
@@ -11,19 +11,19 @@ classes:
 - system.salt.control.virt
 - system.glusterfs.server.volume.glance
 - system.glusterfs.server.volume.keystone
-#- system.salt.control.cluster.openstack_control_cluster
-#- system.salt.control.cluster.openstack_proxy_cluster
-#- system.salt.control.cluster.openstack_database_cluster
-#- system.salt.control.cluster.openstack_message_queue_cluster
-#- system.salt.control.cluster.openstack_benchmark_single
-#- system.salt.control.cluster.openstack_upgrade_single
-#- system.salt.control.cluster.stacklight_server_cluster
-#- system.salt.control.cluster.stacklight_log_cluster
-#- system.salt.control.cluster.stacklight_telemetry_cluster
+- system.salt.control.cluster.openstack_control_cluster
+- system.salt.control.cluster.openstack_proxy_cluster
+- system.salt.control.cluster.openstack_database_cluster
+- system.salt.control.cluster.openstack_message_queue_cluster
+- system.salt.control.cluster.openstack_benchmark_single
+- system.salt.control.cluster.openstack_upgrade_single
+- system.salt.control.cluster.stacklight_server_cluster
+- system.salt.control.cluster.stacklight_log_cluster
+- system.salt.control.cluster.stacklight_telemetry_cluster
 - system.salt.control.cluster.cicd_control_cluster
 - cluster.tty.cicd.gluster
-#- system.salt.control.cluster.ceph_mon_cluster
-#- system.salt.control.cluster.ceph_rgw_cluster
+- system.salt.control.cluster.ceph_mon_cluster
+- system.salt.control.cluster.ceph_rgw_cluster
 - cluster.tty.infra
 parameters:
   _param:
@@ -45,98 +45,98 @@ parameters:
     control:
       size: #RAM 4096,8192,16384,32768,65536
       ##Default production sizing
-#        openstack.control:
-#          cpu: 8
-#          ram: 32768
-#          disk_profile: small
-#          net_profile: default
-#        openstack.database:
-#          cpu: 8
-#          ram: 16384
-#          disk_profile: large
-#          net_profile: default
-#        openstack.message_queue:
-#          cpu: 8
-#          ram: 32768
-#          disk_profile: small
-#          net_profile: default
-#        openstack.proxy:
-#          cpu: 4
-#          ram: 8192
-#          disk_profile: small
-#          net_profile: default
-#        openstack.upgrade:
-#          cpu: 8
-#          ram: 16384
-#          disk_profile: medium
-#          net_profile: default
-#        opencontrail.control:
-#          cpu: 8
-#          ram: 32768
-#          disk_profile: small
-#          net_profile: default
-#        opencontrail.analytics:
-#          cpu: 8
-#          ram: 32768
-#          disk_profile: large
-#          net_profile: default
-#        stacklight.log:
-#          cpu: 4
-#          ram: 8192
-#          disk_profile: xxlarge
-#          net_profile: default
-#        stacklight.server:
-#          cpu: 4
-#          ram: 8192
-#          disk_profile: small
-#          net_profile: default
-#        stacklight.telemetry:
-#          cpu: 4
-#          ram: 8192
-#          disk_profile: xxlarge
-#          net_profile: default
-        cicd.control:
-          cpu: 4
+        openstack.control:
+          cpu: 2
+          ram: 4096
+          disk_profile: small
+          net_profile: default
+        openstack.database:
+          cpu: 2
           ram: 8192
           disk_profile: large
           net_profile: default
-#        ceph.mon:
-#          cpu: 8
-#          ram: 16384
-#          disk_profile: large
-#          net_profile: default
-#        ceph.rgw:
-#          cpu: 8
-#          ram: 16384
-#          disk_profile: small
-#          net_profile: default
+        openstack.message_queue:
+          cpu: 2
+          ram: 4096
+          disk_profile: small
+          net_profile: default
+        openstack.proxy:
+          cpu: 1
+          ram: 2048
+          disk_profile: xsmall
+          net_profile: default
+        openstack.upgrade:
+          cpu: 1
+          ram: 2048
+          disk_profile: small
+          net_profile: default
+        opencontrail.control:
+          cpu: 1
+          ram: 2048
+          disk_profile: xsmall
+          net_profile: default
+        opencontrail.analytics:
+          cpu: 1
+          ram: 2048
+          disk_profile: small
+          net_profile: default
+        stacklight.log:
+          cpu: 1
+          ram: 2048
+          disk_profile: large
+          net_profile: default
+        stacklight.server:
+          cpu: 1
+          ram: 2048
+          disk_profile: small
+          net_profile: default
+        stacklight.telemetry:
+          cpu: 1
+          ram: 2048
+          disk_profile: large
+          net_profile: default
+        cicd.control:
+          cpu: 1
+          ram: 2048
+          disk_profile: small
+          net_profile: default
+        ceph.mon:
+          cpu: 2
+          ram: 4096
+          disk_profile: large
+          net_profile: default
+        ceph.rgw:
+          cpu: 2
+          ram: 4096
+          disk_profile: small
+          net_profile: default
       cluster:
         internal:
           node:
             bmk01:
               image: ${_param:salt_control_xenial_image}
-#            ctl01:
-#              image: ${_param:salt_control_xenial_image}
-#            ctl02:
-#              image: ${_param:salt_control_xenial_image}
-#            ctl03:
-#              image: ${_param:salt_control_xenial_image}
-#            dbs01:
-#              image: ${_param:salt_control_xenial_image}
-#            dbs02:
-#              image: ${_param:salt_control_xenial_image}
-#            dbs03:
-#              image: ${_param:salt_control_xenial_image}
-#            msg01:
-#              image: ${_param:salt_control_xenial_image}
-#            msg02:
-#              image: ${_param:salt_control_xenial_image}
-#            msg03:
-#              image: ${_param:salt_control_xenial_image}
-#            prx01:
-#              image: ${_param:salt_control_xenial_image}
-#            prx02:
-#              image: ${_param:salt_control_xenial_image}
+            ctl01:
+              image: ${_param:salt_control_xenial_image}
+            ctl02:
+              image: ${_param:salt_control_xenial_image}
+            ctl03:
+              image: ${_param:salt_control_xenial_image}
+            dbs01:
+              image: ${_param:salt_control_xenial_image}
+            dbs02:
+              image: ${_param:salt_control_xenial_image}
+            dbs03:
+              image: ${_param:salt_control_xenial_image}
+            msg01:
+              image: ${_param:salt_control_xenial_image}
+            msg02:
+              image: ${_param:salt_control_xenial_image}
+            msg03:
+              image: ${_param:salt_control_xenial_image}
+            prx01:
+              image: ${_param:salt_control_xenial_image}
+            prx02:
+              image: ${_param:salt_control_xenial_image}
   virt:
     nic:
       default:
