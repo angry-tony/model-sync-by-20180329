@@ -36,7 +36,7 @@ parameters:
           enabled: true
           type: eth
           proto: manual
-          name: ${_param:contorl_network_nic}
+          name: ${_param:control_network_nic}
         eth2:
           mtu: 1500
           enabled: true
