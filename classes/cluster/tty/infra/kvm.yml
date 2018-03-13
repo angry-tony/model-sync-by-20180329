@@ -140,10 +140,10 @@ parameters:
   virt:
     nic:
       default:
-        ens160:
+        eth0:
           bridge: br_mgm
           model: virtio
-        ens192:
+        eth1:
           bridge: br_ctl
           model: virtio
           
