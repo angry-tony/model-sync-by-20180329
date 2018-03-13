@@ -141,10 +141,10 @@ parameters:
     nic:
       default:
         eth0:
-          bridge: br_ctl
+          bridge: br_mgm
           model: virtio
         eth1:
-          bridge: br_mgm
+          bridge: br_ctl
           model: virtio
           
 #        eth224:
