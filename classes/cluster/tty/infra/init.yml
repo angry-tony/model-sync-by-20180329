@@ -101,6 +101,9 @@ parameters:
     infra_kvm_node01_deploy_address: 192.168.10.201
     infra_kvm_node02_deploy_address: 192.168.10.202
     infra_kvm_node03_deploy_address: 192.168.10.203
+    infra_kvm_node01_storage_address: 192.168.14.201
+    infra_kvm_node02_storage_address: 192.168.14.202
+    infra_kvm_node03_storage_address: 192.168.14.203
     infra_kvm_node01_hostname: kvm01
     infra_kvm_node02_hostname: kvm02
     infra_kvm_node03_hostname: kvm03
