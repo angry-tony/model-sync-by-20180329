@@ -179,11 +179,11 @@ parameters:
 #          type: eth
 #          proto: manual
 #          name: ${_param:public_nic}
-        eth161:
-          enabled: true
-          type: eth
-          proto: manual
-          name: ${_param:storage_nic}
+#        eth161:
+#          enabled: true
+#          type: eth
+#          proto: manual
+#          name: ${_param:storage_nic}
 #        eth193:
 #          enabled: true
 #          type: eth
@@ -225,14 +225,14 @@ parameters:
  #         netmask: ${_param:public_network_netmask}
  #         use_interfaces:
  #         - ${_param:public_nic}
-        br_sto:
-          enabled: true
-          type: bridge
-          proto: static
-          address: ${_param:storage_address}
-          netmask: ${_param:storage_network_netmask}
-          use_interfaces:
-          - ${_param:storage_nic}
+ #       br_sto:
+ #         enabled: true
+ #         type: bridge
+ #         proto: static
+ #         address: ${_param:storage_address}
+ #         netmask: ${_param:storage_network_netmask}
+ #         use_interfaces:
+ #         - ${_param:storage_nic}
  #       br_dat:
  #         enabled: true
  #         type: bridge
