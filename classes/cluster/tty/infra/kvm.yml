@@ -142,8 +142,11 @@ parameters:
       default:
         ens160:
           bridge: br_mgm
-        eth192:
+          model: virtio
+        ens192:
           bridge: br_ctl
+          model: virtio
+          
 #        eth224:
 #          bridge: br_pry
 #        eth256:
@@ -156,12 +159,12 @@ parameters:
     network:
       bridge: linux
       interface:
-        eth160:
+        ens160:
           enabled: true
           type: eth
           proto: manual
           name: ${_param:deploy_nic}
-        eth192:
+        ens192:
           enabled: true
           type: eth
           proto: manual
