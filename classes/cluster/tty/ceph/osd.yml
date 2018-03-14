@@ -46,7 +46,7 @@ parameters:
           proto: static
           address: ${_param:backend_address}
           netmask: ${_param:backend_network_netmask}
-          name: ${_param:ceph_osd_primary_second_nic}
+          name: ${_param:ceph_osd_backup_nic}
     # bond for cluster communication on _param:public_network
 #        bond1.1:
 #          name: bond1.${_param:control_vlan}
