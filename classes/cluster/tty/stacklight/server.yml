@@ -34,7 +34,7 @@ parameters:
     remote_collector_telegraf_host: monitoring_remote_agent
     keepalived_prometheus_vip_address: ${_param:stacklight_monitor_address}
     keepalived_prometheus_vip_password: 'password'
-    keepalived_prometheus_vip_interface: ens3
+    keepalived_prometheus_vip_interface: ens2
     alertmanager_notification_pushkin_host: ${_param:stacklight_monitor_address}
     alertmanager_notification_pushkin_port: 8887
     prometheus_server_alert_label_route: 'email,salesforce'
@@ -66,5 +66,5 @@ parameters:
   linux:
     network:
       interface:
-        ens2: ${_param:linux_deploy_interface}
-        ens3: ${_param:linux_single_interface}
+        ens3: ${_param:linux_deploy_interface}
+        ens2: ${_param:linux_single_interface}
