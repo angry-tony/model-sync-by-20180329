@@ -2,7 +2,7 @@ parameters:
   _param:
     keepalived_prometheus_vip_address: ${_param:stacklight_monitor_address}
     keepalived_prometheus_vip_password: 'password'
-    keepalived_prometheus_vip_interface: ens3
+    keepalived_prometheus_vip_interface: ens2
 
     oss_node01_address: ${_param:stacklight_monitor_node01_address}
     oss_node02_address: ${_param:stacklight_monitor_node02_address}
