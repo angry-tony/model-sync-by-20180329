@@ -2,6 +2,7 @@
 parameters:
   _param:
     cicd_control_address: 192.168.11.20
+    control_vip_address: 192.168.11.20
     cicd_control_node01_address: 192.168.11.21
     cicd_control_node02_address: 192.168.11.22
     cicd_control_node03_address: 192.168.11.23
