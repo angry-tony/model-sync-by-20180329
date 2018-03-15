@@ -5,6 +5,7 @@ classes:
 - system.heka.log_collector.output.telegraf
 - system.telegraf.agent
 - system.prometheus.collector
+- system.jenkins.slave
 - service.grafana.collector
 - cluster.tty.openstack
 - cluster.tty.stacklight
@@ -29,6 +30,8 @@ parameters:
     docker_compose_image: ${_param:aptly_server_hostname}:5000/compose:1.8.0
     infra_config_hostname: cfg01
     salt_minion_ca_host: ${_param:infra_config_hostname}.${_param:cluster_domain}
+    
+    jenkins_master_port: 18081
     # infra service addresses
     infra_config_address: 192.168.11.11
     infra_config_deploy_address: 192.168.10.11
