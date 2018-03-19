@@ -24,20 +24,19 @@ parameters:
     cluster_node03_hostname: ${_param:openstack_control_node03_hostname}
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
-    control_network_nic: eth1
-    data_network_nic: eth2
+    control_network_nic: ens192
+    data_network_nic: ens193
   linux:
     network:
-      bridge: openvswitch
       interface:
-        eth0: ${_param:linux_deploy_interface}
-        eth1:
+        ens160: ${_param:linux_deploy_interface}
+        ens192:
           mtu: 1500
           enabled: true
           type: eth
           proto: manual
           name: ${_param:control_network_nic}
-        eth2:
+        ens193:
           mtu: 1500
           enabled: true
           type: eth
