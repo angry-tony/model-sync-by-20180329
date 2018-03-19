@@ -5,8 +5,8 @@ classes:
 parameters:
   _param:
     ceph_remote_backup_server: ${_param:infra_kvm_node03_address}
-    ceph_osd_control_nic: eth1
-    ceph_osd_backup_nic: eth2
+    ceph_osd_control_nic: ens192
+    ceph_osd_backup_nic: ens161
   ceph:
     osd:
       enabled: true
@@ -31,7 +31,7 @@ parameters:
     network:
       interface:
         ens160: ${_param:linux_deploy_interface}
-        etns192:
+        ens192:
           mtu: 1500
           enabled: true
           type: eth
