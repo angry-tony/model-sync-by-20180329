@@ -30,8 +30,8 @@ parameters:
   linux:
     network:
       interface:
-        eth0: ${_param:linux_deploy_interface}
-        eth1:
+        ens160: ${_param:linux_deploy_interface}
+        etns192:
           mtu: 1500
           enabled: true
           type: eth
@@ -39,7 +39,7 @@ parameters:
           address: ${_param:single_address}
           netmask: ${_param:control_network_netmask}
           name: ${_param:ceph_osd_control_nic}
-        eth2:
+        ens161:
           mtu: 1500
           enabled: true
           type: eth
